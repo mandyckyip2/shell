@@ -28,7 +28,6 @@ unzip -q rawdata.zip
 # Complete assignment here
 
 # # 1. Create a directory named data
-cd newproject
 mkdir data
 
 # # 2. Move the ./rawdata directory to ./data/raw
