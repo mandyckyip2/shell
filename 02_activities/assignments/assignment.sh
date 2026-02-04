@@ -38,32 +38,21 @@ mv ./rawdata ./data/raw
 ls ./data/raw
 
 # # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_log
-cd data
-mkdir processed
-cd processed
-mkdir server_logs user_logs event_logs
+mkdir ./data/processed
+mkdir -p ./data/processed/server_logs ./data/processed/user_logs ./data/processed/event_log
 
 # # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-cd ..
-cd raw
-cp *server*.log /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/server_logs
+cp ./data/raw/*server*.log ./data/processed/server_logs/
 
 # # 6. Repeat the above step for user logs and event logs
-cp *event*.log /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/event_logs
-cp *user*.log /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/user_logs
+cp ./data/raw/*event*.log ./data/processed/event_logs/
+cp ./data/raw/*user*.log ./data/processed/user_logs/
 
 # # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rm *ipaddr* 
-
-cd ..
-cd ./processed/user_logs
-rm *ipaddr*
+rm ./data/raw/*ipaddr* ./data/processed/user_logs/*ipaddr*
 
 # # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/server_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
-ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/event_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
-ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/user_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
-
+find ./data/processed -type f > ./data/inventory.txt
 
 # ###########################################
 
