@@ -59,7 +59,10 @@ cd ./processed/user_logs
 rm *ipaddr*
 
 # # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
+ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/server_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
+ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/event_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
+ls /c/DeployingAI/Shell/02_activities/assignments/newproject/data/processed/user_logs > /c/DeployingAI/Shell/02_activities/assignments/newproject/data/inventory.txt
+
 
 # ###########################################
 
